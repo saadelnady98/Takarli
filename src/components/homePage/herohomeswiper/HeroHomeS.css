@@ -1,0 +1,61 @@
+/* components/homePage/herohomeswiper/HeroHomeS.css */
+.herohome {
+    height: 100%;
+    width: 100%;
+}
+
+.herohome .swiper-pagination {
+    bottom: 1.25rem !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.herohome .swiper-pagination-bullet {
+    position: relative;
+    width: 6.25rem !important;
+    height: 4px !important;
+    border-radius: 0.25rem !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+    overflow: hidden;
+}
+
+.herohome .swiper-pagination-bullet::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0%;
+    background: #fff;
+    transition: width 3s linear;
+}
+
+.herohome .swiper-pagination-bullet-active::after {
+    width: 100%;
+    animation: fillProgress 5s linear forwards;
+}
+
+@keyframes fillProgress {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .herohome .swiper-pagination-bullet {
+        width: 4rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .herohome .swiper-pagination-bullet {
+        width: 3rem !important;
+    }
+}

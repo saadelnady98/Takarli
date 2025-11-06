@@ -1,0 +1,249 @@
+{
+    "Navbar": {
+        "home": "Accueil",
+        "About Us": "À propos",
+        "Contact Us": "Contactez-nous",
+        "error": "Échec du chargement de la barre de navigation",
+        "selectLang": "Sélectionnez la langue et la monnaie",
+        "language": "Langue",
+        "currency": "Monnaie",
+        "apply": "Appliquer"
+    },
+    "talkToExpert": {
+        "header": {
+            "span": "Parlez à un",
+            "title": "Expert",
+            "altText": "arrière-plan de la page parler à un expert"
+        },
+        "heading": "Parlez-nous",
+        "subheading": "Nous répondrons à toutes vos questions",
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "email": "Adresse e-mail",
+        "phone": "Numéro de téléphone",
+        "contactMethod": "Méthode de contact préférée",
+        "preferredTime": "Horaire préféré",
+        "done": "Terminé",
+        "message": "Message",
+        "placeholderFirst": "Prénom",
+        "placeholderLast": "Nom",
+        "placeholderEmail": "Adresse e-mail",
+        "placeholderMessage": "Votre message",
+        "methods": {
+            "whatsapp": "WhatsApp",
+            "phone": "Appel téléphonique",
+            "telegram": "Telegram"
+        },
+        "times": {
+            "9": "9h",
+            "10": "10h",
+            "11": "11h",
+            "12": "12h",
+            "14": "14h"
+        },
+        "submit": "Envoyer le message",
+        "success": "Formulaire envoyé avec succès !",
+        "error": "Une erreur s'est produite, veuillez réessayer plus tard",
+        "validation": {
+            "firstName": "Le prénom est requis",
+            "lastName": "Le nom est requis",
+            "email": "Une adresse e-mail valide est requise",
+            "phone": "Veuillez entrer un numéro valide (7–15 chiffres)",
+            "message": "Le message ne peut pas être vide",
+            "method": "Veuillez sélectionner une méthode de contact",
+            "time": "Veuillez sélectionner un horaire préféré"
+        }
+    },
+    "contact": {
+        "header": {
+            "span": "Écrivez-nous",
+            "altText": "Arrière-plan de la page contact"
+        },
+        "info": {
+            "title": "Informations de contact",
+            "subtitle": "Remplissez le formulaire ou envoyez un e-mail",
+            "email": "E-mail",
+            "phone1": "Téléphone principal",
+            "phone2": "Téléphone secondaire",
+            "whatsapp": "WhatsApp",
+            "social": "Suivez-nous sur"
+        },
+        "address": {
+            "title": "Rendez-nous visite",
+            "heading": "Vous souhaitez passer à notre bureau ?",
+            "description": "Rencontrez notre équipe directement à Dubaï et parlons ensemble de votre prochain projet immobilier.",
+            "alt": "Localisation sur la carte"
+        },
+        "map": {
+            "title": "Notre emplacement",
+            "description": "Vous pouvez trouver notre bureau à l’emplacement indiqué ci-dessous.",
+            "address": "Adresse non disponible"
+        },
+        "form": {
+            "title": "Entrer en contact",
+            "firstName": "Prénom",
+            "lastName": "Nom",
+            "email": "Adresse e-mail",
+            "message": "Message",
+            "submit": "Envoyer",
+            "sending": "Envoi...",
+            "success": "Message envoyé avec succès !",
+            "error": "Une erreur s’est produite, veuillez réessayer plus tard.",
+            "validation": {
+                "firstName": "Le prénom est requis.",
+                "lastName": "Le nom est requis.",
+                "email": "Adresse e-mail invalide.",
+                "message": "Le message doit contenir au moins 5 caractères."
+            }
+        }
+    },
+    "about": {
+        "ourTeam": {
+            "title": "Notre équipe",
+            "description": "Notre équipe dirigeante apporte vision et expertise, guidant innovation, intégrité et confiance dans tout ce que nous faisons."
+        },
+        "aboutSec5Title": "Vous cherchez des conseils d’experts ? Notre équipe est là pour vous aider à trouver le bon investissement.",
+        "aboutSec5Desc": "Parler à un expert"
+    },
+    "home": {
+        "homeFilter": {
+            "selectCountry": "Choisir un pays",
+            "selectCity": "Choisir une ville",
+            "selectCategory": "Choisir une catégorie",
+            "selectPriceRange": "Fourchette de prix",
+            "priceRange": "Fourchette de prix",
+            "search": "Rechercher",
+            "loading": "Chargement...",
+            "resetFilters": "Réinitialiser les filtres",
+            "noPriceRangesAvailable": "Aucune fourchette disponible"
+        },
+        "statistics": {
+            "offPlan": "Projets sur plan",
+            "readyToMove": "Propriétés prêtes",
+            "developers": "Promoteurs"
+        },
+        "noCountriesAvailable": "Aucun pays disponible",
+        "aboutSectionTitle": "À propos de Takarli & Co",
+        "offPlan": "Propriétés sur plan",
+        "readyToMove": "Propriétés prêtes à l’emploi",
+        "learnMore": "En savoir plus",
+        "contactSectionTitle": "Contactez-nous",
+        "contactSectionDescription": "Vous avez des questions ou avez besoin de plus de détails ? Contactez-nous aujourd’hui."
+    },
+    "footer": {
+        "connect": "Contactez-nous",
+        "connectDesc": "Takarli est une plateforme immobilière fiable présentant des propriétés prêtes et sur plan aux Émirats et à Monaco.",
+        "rights": "© 2025 Takarli & Co. Tous droits réservés.",
+        "links": {
+            "home": "Accueil",
+            "aboutUs": "À propos",
+            "contactUs": "Contact",
+            "developers": "Promoteurs",
+            "blogs": "blogs",
+            "faqs": "FAQ"
+        },
+        "legal": {
+            "terms&conditions": "Conditions générales",
+            "privacypolicy": "Politique de confidentialité"
+        }
+    },
+    "developers": {
+        "headerSpan": "NOS",
+        "headerTitle": "Promoteurs",
+        "noDevelopers": "Aucun promoteur trouvé.",
+        "discoverMore": "Découvrir plus"
+    },
+    "pagination": {
+        "previous": "Précédent",
+        "next": "Suivant"
+    },
+    "blogs": {
+        "title": "Blogs",
+        "span": "Nos",
+        "alt": "En-tête des blogs",
+        "latestBlogs": "Derniers blogs",
+        "moreBlogs": "Plus de blogs",
+        "discoverMore": "Découvrir plus",
+        "publishedOn": "Publié le",
+        "city": "Ville"
+    },
+    "properties": {
+        "filters": {
+            "city": "Ville",
+            "area": "Zone",
+            "category": "Catégorie",
+            "property": "Type de propriété",
+            "developers": "Promoteurs",
+            "prices": "Prix",
+            "selectCity": "Choisir une ville",
+            "selectArea": "Choisir une zone",
+            "selectCategory": "Choisir une catégorie",
+            "selectProperty": "Choisir un type de propriété",
+            "selectDeveloper": "Choisir un promoteur",
+            "selectPrice": "Choisir un prix",
+            "sort": "Trier",
+            "selectSort": "Choisir un tri",
+            "filters": "Filtres",
+            "reset": "Réinitialiser",
+            "resetFilters": "Réinitialiser les filtres",
+            "highestPriceDescending": "Prix le plus élevé (décroissant)",
+            "lowestPriceDescending": "Prix le plus bas (décroissant)",
+            "highestPriceAscending": "Prix le plus élevé (croissant)",
+            "lowestPriceAscending": "Prix le plus bas (croissant)"
+        },
+        "NoPropertiesFound": "Aucune propriété trouvée",
+        "properties": "Propriétés"
+    },
+    "singleProperty": {
+        "keyFeatures": "Caractéristiques clés",
+        "amenities": "Amenities",
+        "location": "Location",
+        "locationNotAvailable": "Location non disponible",
+        "floorPlan": "Plan du sol",
+        "contactAgent": "Contacter l’agent",
+        "contactUs": "Contacter-nous",
+        "requestDetails": "Demande de détails",
+        "share": "Partagez cette propriété",
+        "close": "Fermer",
+        "type": "Type",
+        "unitDescription": "Description de l’unité",
+        "roomsCount": "Nombre de pièces",
+        "rooms": "pièces",
+        "suiteDimensions": "Dimensions de la suite",
+        "length": "Longueur",
+        "width": "Largeur",
+        "suiteArea": "Surface de la suite",
+        "balconyDimensions": "Dimensions du balcon",
+        "balconyArea": "Surface du balcon",
+        "totalArea": "Surface totale",
+        "roomDetails": "Détails des pièces",
+        "area": "Surface",
+        "downloadFloorPlan": "Télécharger le plan d’étage",
+        "previousSlide": "Diapositive précédente",
+        "nextSlide": "Diapositive suivante"
+    },
+    "faqs": {
+        "faqTitle": "Questions fréquemment posées"
+    },
+    "privacy": {
+        "lastUpdated": "Dernière mise à jour"
+    },
+    "terms": {
+        "lastUpdated": "Dernière mise à jour"
+    },
+    "ErrorPage": {
+        "title": "Something went wrong!",
+        "defaultMessage": "Failed to load data.",
+        "tryAgain": "Try Again"
+    },
+    "NotFoundPage": {
+        "title": "Aucune donnée trouvée",
+        "description": "Enregistrez vos meilleurs choix ici. Commencez à explorer pour créer votre liste de favoris.",
+        "description2": "Oups ! Données introuvables.",
+        "button": "Commencez à explorer les propriétés maintenant",
+        "button2": "Retour à la page d'accueil"
+    },
+    "LoadingOverlay": {
+        "loading": "Chargement..."
+    }
+}

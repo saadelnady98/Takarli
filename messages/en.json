@@ -1,0 +1,249 @@
+{
+    "Navbar": {
+        "home": "Home",
+        "About Us": "About Us",
+        "Contact Us": "Contact Us",
+        "error": "Failed to load navbar",
+        "selectLang": "Select language and currency",
+        "language": "Language",
+        "currency": "Currency",
+        "apply": "Apply"
+    },
+    "talkToExpert": {
+        "header": {
+            "span": "Talk To An",
+            "title": "Expert",
+            "altText": "talk to expert page background"
+        },
+        "heading": "Talk to us",
+        "subheading": "we will answer all your questions",
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "email": "Email Address",
+        "phone": "Phone Number",
+        "contactMethod": "Preferred Contact Method",
+        "preferredTime": "Preferred Time",
+        "message": "Message",
+        "done": "Done",
+        "placeholderFirst": "First Name",
+        "placeholderLast": "Last Name",
+        "placeholderEmail": "Email address",
+        "placeholderMessage": "Message",
+        "methods": {
+            "whatsapp": "WhatsApp",
+            "phone": "Phone Call",
+            "telegram": "Telegram"
+        },
+        "times": {
+            "9": "9 AM",
+            "10": "10 AM",
+            "11": "11 AM",
+            "12": "12 PM",
+            "14": "2 PM"
+        },
+        "submit": "Send Message",
+        "success": "Form submitted successfully!",
+        "error": "Something went wrong, please try again later",
+        "validation": {
+            "firstName": "First name is required",
+            "lastName": "Last name is required",
+            "email": "Valid email is required",
+            "phone": "Please enter a valid phone number (7–15 digits)",
+            "message": "Message cannot be empty",
+            "method": "Please select a contact method",
+            "time": "Please select a preferred time"
+        }
+    },
+    "contact": {
+        "header": {
+            "span": "Write to us",
+            "altText": "Contact page background"
+        },
+        "info": {
+            "title": "Contact Information",
+            "subtitle": "Fill in the form or drop an email",
+            "email": "Email",
+            "phone1": "Primary Phone",
+            "phone2": "Secondary Phone",
+            "whatsapp": "WhatsApp",
+            "social": "Follow us on"
+        },
+        "address": {
+            "title": "Visit Us",
+            "heading": "Planning To Drop By Our Office?",
+            "description": "Meet our team directly at our Dubai location and let’s talk about your next property move.",
+            "alt": "Map Location"
+        },
+        "map": {
+            "title": "Our Location",
+            "description": "You can find our office at the location shown below.",
+            "address": "Address not available"
+        },
+        "form": {
+            "title": "Get in Touch",
+            "firstName": "First Name",
+            "lastName": "Last Name",
+            "email": "Email Address",
+            "message": "Message",
+            "submit": "Send Message",
+            "sending": "Sending...",
+            "success": "Message sent successfully!",
+            "error": "Something went wrong, please try again later.",
+            "validation": {
+                "firstName": "First name is required.",
+                "lastName": "Last name is required.",
+                "email": "Invalid email address.",
+                "message": "Message must be at least 5 characters."
+            }
+        }
+    },
+    "about": {
+        "ourTeam": {
+            "title": "Our Team",
+            "description": "Our leadership team brings vision and expertise, driving innovation, integrity, and trust across everything we do."
+        },
+        "aboutSec5Title": "Looking for expert guidance? Our team is here to help you find the right investment.",
+        "aboutSec5Desc": "Talk to an expert"
+    },
+    "home": {
+        "homeFilter": {
+            "selectCountry": "Select Country",
+            "selectCity": "Select City",
+            "selectCategory": "Select Category",
+            "selectPriceRange": "Price Range",
+            "priceRange": "Price range",
+            "search": "Search",
+            "loading": "Loading...",
+            "resetFilters": "Reset Filters",
+            "noPriceRangesAvailable": "No price ranges available"
+        },
+        "statistics": {
+            "offPlan": "Off Plan Properties",
+            "readyToMove": "Ready To Move Properties",
+            "developers": "Developers"
+        },
+        "noCountriesAvailable": "No countries available",
+        "aboutSectionTitle": "À propos de Takarli & Co",
+        "offPlan": "Off Plan properties",
+        "readyToMove": "Ready To Move properties",
+        "learnMore": "Learn More",
+        "contactSectionTitle": "Contact Us",
+        "contactSectionDescription": "Have questions or need more details? Get in touch with us today."
+    },
+    "footer": {
+        "connect": "Connect With Us",
+        "connectDesc": "Takarli is a trusted real estate platform showcasing off-plan and ready properties in the UAE and Monaco.",
+        "rights": "© 2025 Takarli & Co. All Rights Reserved.",
+        "links": {
+            "home": "Home",
+            "aboutUs": "About Us",
+            "contactUs": "Contact Us",
+            "developers": "Developers",
+            "blogs": "Blogs",
+            "faqs": "FAQs"
+        },
+        "legal": {
+            "terms&conditions": "Terms & Conditions",
+            "privacypolicy": "Privacy Policy"
+        }
+    },
+    "developers": {
+        "headerSpan": "OUR",
+        "headerTitle": "Developers",
+        "noDevelopers": "No developers found.",
+        "discoverMore": "Discover More"
+    },
+    "pagination": {
+        "previous": "Previous",
+        "next": "Next"
+    },
+    "blogs": {
+        "title": "Blogs",
+        "span": "Our",
+        "alt": "Blogs Header",
+        "latestBlogs": "Latest Blogs",
+        "moreBlogs": "More Blogs",
+        "discoverMore": "Discover More",
+        "publishedOn": "Published On",
+        "city": "City"
+    },
+    "properties": {
+        "filters": {
+            "city": "City",
+            "area": "Area",
+            "category": "Category",
+            "property": "Property Type",
+            "developers": "Developers",
+            "prices": "Price",
+            "selectCity": "Select City",
+            "selectArea": "Select Area",
+            "selectCategory": "Select Category",
+            "selectProperty": "Select Property Type",
+            "selectDeveloper": "Select Developer",
+            "selectPrice": "Select Price",
+            "sort": "Sort",
+            "selectSort": "Select Sort",
+            "filters": "Filters",
+            "reset": "Reset",
+            "resetFilters": "Reset Filters",
+            "highestPriceDescending": "Highest Price (Descending)",
+            "lowestPriceDescending": "Lowest Price (Descending)",
+            "highestPriceAscending": "Highest Price (Ascending)",
+            "lowestPriceAscending": "Lowest Price (Ascending)"
+        },
+        "NoPropertiesFound": "No Properties Found",
+        "properties": "Properties"
+    },
+    "singleProperty": {
+        "keyFeatures": "Key Features",
+        "amenities": "Amenities",
+        "location": "Location",
+        "locationNotAvailable": "Location not available",
+        "floorPlan": "Floor Plan",
+        "contactAgent": "Contact Agent",
+        "contactUs": "Contact Us",
+        "requestDetails": "Request Details",
+        "share": "Share This Property",
+        "close": "Close",
+        "type": "Type",
+        "unitDescription": "Unit Description",
+        "roomsCount": "Rooms Count",
+        "rooms": "rooms",
+        "suiteDimensions": "Suite Dimensions",
+        "length": "Length",
+        "width": "Width",
+        "suiteArea": "Suite Area",
+        "balconyDimensions": "Balcony Dimensions",
+        "balconyArea": "Balcony Area",
+        "totalArea": "Total Area",
+        "roomDetails": "Room Details",
+        "area": "Area",
+        "downloadFloorPlan": "Download Floor Plan",
+        "previousSlide": "Previous slide",
+        "nextSlide": "Next slide"
+    },
+    "faqs": {
+        "faqTitle": "Frequently Asked Questions"
+    },
+    "privacy": {
+        "lastUpdated": "Last Updated"
+    },
+    "terms": {
+        "lastUpdated": "Last Updated"
+    },
+    "ErrorPage": {
+        "title": "Something went wrong!",
+        "defaultMessage": "Failed to load data.",
+        "tryAgain": "Try Again"
+    },
+    "NotFoundPage": {
+        "title": "No Data Found",
+        "description": "Save your top choices here. Start exploring to build your favorites list.",
+        "description2": "Oops! Data not found.",
+        "button": "Start exploring properties now",
+        "button2": "Back to Home"
+    },
+    "LoadingOverlay": {
+        "loading": "Loading..."
+    }
+}

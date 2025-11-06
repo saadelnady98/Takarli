@@ -1,0 +1,21 @@
+{
+  "paths": ["src/"],
+  "ignore": [
+    "**/node_modules/**",
+    "**/.next/**",
+    "**/out/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/coverage/**",
+    "**/public/**",
+    "**/*.min.*",
+    "**/*.snap"
+  ],
+  "threshold": 1.5,
+  "minLines": 6,
+  "reporters": ["console", "html", "json"],
+  "output": "reports/jscpd",
+  "gitignore": true,
+  "ignoreLiterals": true,
+  "languages": ["javascript", "typescript", "jsx", "tsx", "css", "scss"]
+}

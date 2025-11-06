@@ -1,0 +1,194 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@plugin "./hero.ts";
+
+@source "../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --color-dark: #1a1616;
+    --color-dark-grey: #474747;
+    --color-border: #d2d2d2;
+    --color-badge: #f1f1f1;
+    --color-text-Paragraph: #b7b7b7;
+    --color-border-darker: #d6d6d6;
+    --color-text-darker: #8c8c8c;
+    --color-filter-border: #dddde0;
+}
+
+html,
+body {
+    font-family: "galleds", sans-serif;
+}
+
+
+.rounded-small {
+    border-radius: 0px !important;
+}
+
+/* إضافة container-padding هنا */
+@layer components {
+    .container-padding {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    @media (min-width: 1024px) {
+        .container-padding {
+            padding-left: 70px;
+            padding-right: 70px;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .container-padding {
+            padding-left: 140px;
+            padding-right: 140px;
+        }
+    }
+}
+
+@font-face {
+    font-family: "galleds";
+    src: url("/fonts/galleds-stars.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "MulishLocal";
+    src: url("/fonts/Mulish-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@theme inline {
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+}
+
+:root {
+    --radius: 0.625rem;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
+    --primary: oklch(0.205 0 0);
+    --primary-foreground: oklch(0.985 0 0);
+    --secondary: oklch(0.97 0 0);
+    --secondary-foreground: oklch(0.205 0 0);
+    --border: oklch(0.922 0 0);
+    --ring: oklch(0.708 0 0);
+}
+
+.dark {
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --border: oklch(1 0 0 / 10%);
+    --ring: oklch(0.556 0 0);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+input[type="radio"] {
+    accent-color: #a9a9a9;
+}
+
+input[type="radio"]+span {
+    color: #a9a9a9;
+}
+
+input[type="radio"]:checked {
+    accent-color: #1e1e1e;
+}
+
+input[type="radio"]:checked+span {
+    color: #1e1e1e;
+}
+
+.react-international-phone-input-container .react-international-phone-country-selector-button {
+    border: none;
+}
+
+.react-international-phone-flag {
+    border-radius: 0 !important;
+}
+
+.react-international-phone-country-selector-button__button-content {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.react-international-phone-flag {
+    border-radius: 0 !important;
+}
+
+.react-international-phone-country-selector-button {
+    padding: 0 !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+.react-international-phone-country-selector-button img {
+    display: block;
+    border-radius: 0 !important;
+}
+
+.react-international-phone-country-selector-button:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.shimmer {
+    background: linear-gradient(90deg,
+            #e5e7eb 25%,
+            #f3f4f6 37%,
+            #e5e7eb 63%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}
