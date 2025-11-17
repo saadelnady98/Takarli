@@ -109,7 +109,7 @@ export default function SharedDropdown<T>({
 
   return (
     <Dropdown className="w-full h-full rounded-none shadow-sm">
-      <DropdownTrigger className="w-full">
+      <DropdownTrigger  >
         <Button
           ref={triggerRef}
           disabled={!data.length}
@@ -145,11 +145,11 @@ export default function SharedDropdown<T>({
         selectionMode="single"
         variant="flat"
         onSelectionChange={handleSelectionChange}
-        style={{
-          width: menuWidth ? `${menuWidth}px` : "auto",
-          minWidth: menuWidth ? `${menuWidth}px` : "auto",
-        }}
-        className="max-h-60 overflow-y-auto rounded-none px-0"
+        // style={{
+        //   width: menuWidth ? `${menuWidth}px` : "auto",
+        //   minWidth: menuWidth ? `${menuWidth}px` : "auto",
+        // }}
+        className="max-h-60 overflow-y-auto rounded-none px-0 w-full"
       >
         {data.map((item) => (
           <DropdownItem
