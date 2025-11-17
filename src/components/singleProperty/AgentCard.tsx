@@ -1,6 +1,5 @@
 "use client"
 import React, { useState } from "react"
-// import { Images } from "@/data/data"
 import Image from "next/image"
 import ContactForm from "../ContactForm"
 import { Mail, X } from "lucide-react"
@@ -26,14 +25,14 @@ export default function AgentCard({
     <>
       {!open && (
         <div className="from-badge flex w-full flex-col gap-4 bg-gradient-to-b to-white p-6">
-          <h4 className="text-dark font-[galleds] text-xl lg:text-3xl">{t("contactAgent")}</h4>
+          <h4 className="text-dark text-xl lg:text-3xl">{t("contactAgent")}</h4>
           <div className="flex items-center gap-4">
             <Link
               href={`/developers/${singlePropertyData?.developer?.slug}`}
               className="block h-[88px] w-[88px]"
             >
               <Image
-                src={devImage}
+                src={devImage ?? "/assets/logo/logo-footer.png"}
                 alt="agent"
                 width={1024}
                 height={1080}
@@ -59,8 +58,7 @@ export default function AgentCard({
             onClick={handleOpen}
             className="flex w-full cursor-pointer items-center justify-center gap-2.5 rounded-none border border-black bg-white py-6 text-lg text-black hover:text-white"
           >
-            {/* <Image src={Images.blackEnvlop} alt="whiteCall" width={20} height={20} /> */}
-            <Mail />
+             <Mail />
             {t("requestDetails")}
           </Button>
           {/* </div> */}
@@ -69,11 +67,12 @@ export default function AgentCard({
       {open && (
         <div className="border-border flex flex-col gap-3 p-6">
           <div className="flex w-full justify-between">
-            <h2 className="text-dark font-[galleds] !text-3xl text-[2.5rem] !font-normal">
-              {t("contactUs")}
-            </h2>
-            <button onClick={handleOpen} className="bg-dark hover:bg-dark/80 cursor-pointer p-2 text-white transition-colors rounded-full hidden xl:block">
-                <X className="h-5 w-5 text-white" />
+            <h2 className="text-dark !text-3xl text-[2.5rem] !font-normal">{t("contactUs")}</h2>
+            <button
+              onClick={handleOpen}
+              className="bg-dark hover:bg-dark/80 hidden cursor-pointer rounded-full p-2 text-white transition-colors xl:block"
+            >
+              <X className="h-5 w-5 text-white" />
             </button>
           </div>
           <ContactForm agent={true} propertyId={propertyId} />

@@ -29,17 +29,17 @@ export function BlogsSection({ blogs }: BlogsSectionProps) {
             </div>
 
             <div className="flex flex-col gap-4">
-              <h3 className="xl:text-4xl text-2xl text-dark font-[galleds] leading-tight">
+              <h3 className="xl:text-4xl text-2xl text-dark  leading-tight">
                 {blog.title}
               </h3>
 
-              <p className="xl:text-base text-sm font-sans font-light text-[rgba(140,140,140,1)] line-clamp-3">
+              <p className="xl:text-base text-sm  font-light text-[rgba(140,140,140,1)] line-clamp-3">
                 {blog.short_description}
               </p>
 
               <Link
                 href={`/blogs/${blog.slug}`}
-                className={`bg-dark text-white font-[galleds] xl:text-sm text-xs px-4 py-2 rounded-none font-extralight w-fit hover:bg-gray-800 transition-colors
+                className={`bg-dark text-white  xl:text-sm text-xs px-4 py-2 rounded-none font-extralight w-fit hover:bg-gray-800 transition-colors
                 ${isEven ? "lg:self-start" : "lg:self-end"}`}
               >
                 {t("discoverMore")}

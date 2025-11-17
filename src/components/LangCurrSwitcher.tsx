@@ -1,68 +1,114 @@
-"use client"
-import React from "react"
-import Image from "next/image"
-import { usePathname } from "@/lib/navLink"
-import { Lang_CurrProps } from "@/types/interfaceData"
-import { useLangCurr } from "@/context/langCurrContext"
-import { ChevronDown } from "lucide-react"
-import Link from "next/link"
-import NavLinks from "./nav-links"
+"use client";
 
-export default function LangCurrSwitcher({ onClick, data }: Lang_CurrProps) {
-  const pathname = usePathname()
-  const { language, currency } = useLangCurr()
-  const { Imagess, isHome, globe } = React.useMemo(() => {
-    const isHome = pathname === "/"
+import React, { useMemo, useCallback, memo } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "@/lib/navLink";
+import { useLangCurr } from "@/context/langCurrContext";
+import { Lang_CurrProps } from "@/types/interfaceData";
+import NavLinks from "./nav-links";
+
+const formatCurrency = (currency: string): string => {
+  switch (currency) {
+    case "AED":
+      return "AED";
+    case "EUR":
+      return "EUR";
+    default:
+      return "$";
+  }
+};
+const ChevronIcon = memo(({ chevronColorClass }: { chevronColorClass: string }) => (
+  <svg
+    width="20"
+    height="20"
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`h-3 w-3 sm:h-5 sm:w-5 font-light ${chevronColorClass}`}
+  >
+    <path
+      d="M5 7.5L10 12.5L15 7.5"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+));
+
+ChevronIcon.displayName = "ChevronIcon";
+
+const LangCurrSwitcher: React.FC<Lang_CurrProps> = ({ onClick, data }) => {
+  const pathname = usePathname();
+  const { language, currency } = useLangCurr();
+
+  const { logoSrc, globeSrc, textColorClass, chevronColorClass } = useMemo(() => {
+    const home = pathname === "/";
     return {
-      isHome,
-      Imagess: isHome ? "/assets/logo/logo-white.png" : "/assets/logo/logo-nav.png",
-      globe: isHome ? "/assets/logo/globe-white.svg" : "/assets/logo/globe-black.svg",
-    }
-  }, [pathname])
+      logoSrc: home
+        ? "/assets/logo/logo-white.png"
+        : "/assets/logo/logo-nav.png",
+      globeSrc: home
+        ? "/assets/logo/globe-white.svg"
+        : "/assets/logo/globe-black.svg",
+      textColorClass: home
+        ? "text-black lg:text-white"
+        : "text-dark",
+      chevronColorClass: home
+        ? "lg:text-white"
+        : "text-dark",
+    };
+  }, [pathname]);
+
+  const handleClick = useCallback(() => {
+    if (onClick) onClick();
+  }, [onClick]);
+
   return (
-    <div className="container-padding items-center justify-between lg:border-b-[0.5px] lg:border-[#d4d4d4] py-4 max-lg: ms-auto max-sm:px-1 lg:flex lg:w-full lg:pt-5">
-      <Link href="/">
+    <header className="container-padding items-strech justify-between pt-4 pb-2  max-lg:ms-auto max-sm:px-1 lg:flex lg:w-full lg:border-b-[0.5px] lg:border-[#d4d4d4] ">
+      <Link href="/" aria-label="Home logo link">
         <Image
-          src={Imagess}
-          alt="navlogo"
+          src={logoSrc}
+          alt="Navigation Logo"
           width={90}
           height={60}
-          quality={100}
+          priority
           className="max-lg:hidden"
+          title="Takarli"
+          aria-label="Takarli"
         />
       </Link>
+
       <NavLinks data={data} />
 
-      <div
-        onClick={onClick}
-        className="flex h-12 hover:border-gray-400 focus:outline-none transition-colors min-w-fit cursor-pointer items-center justify-between gap-1.5 border-[0.0625rem] border-[#d4d4d4] p-2 sm:min-h-8 sm:min-w-28 lg:min-h-9 lg:min-w-36"
+      <button
+        type="button"
+        onClick={handleClick}
+        aria-label="Change language and currency"
+        className="flex h-12 items-center justify-between gap-1.5 border border-[#d4d4d4] p-2 transition-colors 
+                   hover:border-gray-400 focus:outline-none cursor-pointer sm:min-h-8 sm:min-w-28 lg:min-h-9 lg:min-w-36"
       >
         <div
-          className={`${isHome ? "text-black lg:text-white" : "text-dark"} flex items-center gap-[0.375rem] text-[12px] text-nowrap lg:text-[1rem]`}
+          className={`${textColorClass} flex items-center gap-1.5 text-xs text-nowrap lg:text-base`}
         >
           <Image
-            src={globe}
-            unoptimized
-            alt="globe"
+            src={globeSrc}
+            alt="Globe icon"
             width={16}
             height={16}
+            unoptimized
             className="object-cover max-lg:hidden lg:h-5 lg:w-5"
           />
-          {/* <Image
-            src={'/assets/logo/globe-black.svg'}
-            unoptimized
-            alt="globe"
-            width={16}
-            height={16}
-            className="sm:h-5 lg:hidden sm:w-5 h-3 w-3 object-cover"
-          /> */}
-          {language.toUpperCase()} -{" "}
-          {currency === "Dirham" ? "AED" : currency === "EUR" ? "EUR" : "$"}
+          {language.toUpperCase()} - {formatCurrency(currency)}
         </div>
-        <ChevronDown
-          className={`h-3 w-3 font-light sm:h-5 sm:w-5 ${isHome ? "lg:text-white" : "text-dark"}`}
+
+        <ChevronIcon
+          chevronColorClass={chevronColorClass}
         />
-      </div>
-    </div>
-  )
-}
+      </button>
+    </header>
+  );
+};
+
+export default React.memo(LangCurrSwitcher);

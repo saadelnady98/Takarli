@@ -1,5 +1,5 @@
 "use client";
-import { usePagination } from "@/hooks/shared-pagintaion";
+import { usePagination } from "@/hooks/use-pagination";
 import { BlogsSection } from "./BlogsSection";
 import { BlogCardList } from "./blog-card-list";
 import Pagination from "@/components/sharedUi/Pagenation/Pagenation";
@@ -42,11 +42,11 @@ export function BlogPageContent({
 
   return (
 
-    <div className="lg:mt-12 mt-6 lg:mb-24 mb-12 flex w-full flex-col items-center lg:gap-12 gap-6 container-padding font-[galleds]">
+    <div className="lg:mt-12 mt-6 lg:mb-24 mb-12 flex w-full flex-col items-center lg:gap-12 gap-6 container-padding ">
       <GenericHeader
         title={t("title")}
         span={t("span")}
-        image="/assets/single-property/img-5.svg"
+        image="/assets/single-property/img-5.webp"
         altText={t("alt")}
         darkOverlay
       />

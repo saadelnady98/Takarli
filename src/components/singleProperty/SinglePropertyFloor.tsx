@@ -18,7 +18,7 @@ export default function SinglePropertyFloor({
       {Array.isArray(apartments) && apartments.length > 0 && (
         <>
           <span className="block w-full border-b border-[rgba(210,210,210,1)]" />
-          <p className="font-[galleds] text-xl lg:text-3xl text-dark">
+          <p className=" text-xl lg:text-2xl text-dark">
             {t("floorPlan")}:
           </p>
         </>

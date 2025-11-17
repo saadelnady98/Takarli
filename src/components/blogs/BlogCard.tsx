@@ -48,7 +48,7 @@ export function BlogCard({ blog }: BlogCardComponentProps) {
 
       {/* تفاصيل المقال */}
       <div className="flex h-full w-full flex-col lg:gap-4 gap-2">
-        <h5 className="font-[galleds] lg:text-2xl text-lg lg:leading-8 min-h-16 line-clamp-2">
+        <h5 className=" lg:text-2xl text-lg lg:leading-8 min-h-16 line-clamp-2">
           {blog.title}
         </h5>
 
@@ -58,7 +58,7 @@ export function BlogCard({ blog }: BlogCardComponentProps) {
 
         <Link
           href={`/blogs/${blog.slug}`}
-          className="bg-dark text-white font-extralight font-[galleds] lg:text-sm text-xs px-4 py-2 rounded-none w-fit hover:bg-gray-800 transition-colors"
+          className="bg-dark text-white font-extralight  lg:text-sm text-xs px-4 py-2 rounded-none w-fit hover:bg-gray-800 transition-colors"
         >
           {t("discoverMore")}
         </Link>

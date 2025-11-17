@@ -26,7 +26,7 @@ export default function ContactMap({ data }: { data: ContactResponse }) {
 
   return (
     <section className="w-full  mb-10">
-      <h3 className="text-dark lg:text-3xl text-xl font-[galleds] mb-4">
+      <h3 className="text-dark lg:text-3xl text-xl  mb-4">
         {t("title")}
       </h3>
       <p className="text-dark-grey lg:text-xl text-sm mb-6">

@@ -12,17 +12,17 @@ export default function TalkToExpertPage() {
         <GenericHeader
           title={t("header.title")}
           span={t("header.span")}
-          image="/assets/single-property/img-5.svg"
+          image="/assets/single-property/img-5.webp"
           altText={t("header.altText")}
           darkOverlay
         />
       </div>
 
       <div className="flex flex-col items-center text-center lg:gap-5 gap-4 lg:mt-10 mt-6">
-        <h1 className="text-dark font-sans lg:text-xl text-lg font-bold">
+        <h1 className="text-dark  lg:text-xl text-lg font-bold">
           {t("heading")}
         </h1>
-        <p className="font-[galleds] lg:text-4xl text-2xl capitalize lg:mb-5 mb-2 text-dark">
+        <p className=" lg:text-4xl text-2xl capitalize lg:mb-5 mb-2 text-dark">
           {t("subheading")}
         </p>
       </div>

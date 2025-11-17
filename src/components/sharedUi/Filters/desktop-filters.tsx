@@ -4,11 +4,11 @@ import { Variants, motion } from "framer-motion";
 import { RotateCcw } from "lucide-react";
 import DynamicDropdown from "./dynamic-dropdown";
 import PriceRangeDropdown from "./price-range-dropdown";
-import SharedDropdown from "./SharedDrowpdown";
-import { FilterIcon, FilterIconProps } from "./filter-icons";
+ import { FilterIcon, FilterIconProps } from "./filter-icons";
 import { DynamicDropdownConfig, PriceRangeConfig } from "@/types/filter-types";
 import { useFilters } from "@/context/filters-context";
 import { useTranslations } from "next-intl";
+import SharedDropdown from "@/components/SharedDrowpdown";
 
 interface DesktopFiltersProps {
   dropdownConfigs: DynamicDropdownConfig[];

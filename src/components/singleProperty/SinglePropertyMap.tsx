@@ -13,7 +13,7 @@ export default function SinglePropertyMapSection({
    const t = useTranslations("singleProperty");
   return (
     <div className="flex w-full flex-col gap-[1rem]">
-      <h3 className="text-dark text-[2.5rem] font-[galleds] "> {t("location")}:</h3>
+      <h3 className="text-dark lg:text-2xl "> {t("location")}:</h3>
 
       <p className="text-dark-grey text-[1.25rem] font-light  ">
         {address || t("locationNotAvailable")}

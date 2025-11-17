@@ -53,6 +53,7 @@ export default function Pagination({
       <button
         onClick={() => canGoPrevious && onPageChange(currentPage - 1)}
         disabled={!canGoPrevious}
+        aria-label={`Go to page ${currentPage - 1}`}
         className={`
           flex items-center justify-center h-10 px-4 border border-gray-300 
           text-sm font-medium transition-colors min-w-[100px]
@@ -72,6 +73,7 @@ export default function Pagination({
           <button
             key={page}
             onClick={() => onPageChange(page)}
+            aria-label={`Go to page ${page}`}
             className={`
               flex items-center justify-center h-10 w-10 border 
               text-sm font-medium transition-colors

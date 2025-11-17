@@ -115,7 +115,9 @@
             "search": "Rechercher",
             "loading": "Chargement...",
             "resetFilters": "Réinitialiser les filtres",
-            "noPriceRangesAvailable": "Aucune fourchette disponible"
+            "noPriceRangesAvailable": "Aucune fourchette disponible",
+            "errorLoading": "Erreur lors du chargement des filtres",
+            "errorLoadingPrice": "Erreur lors du chargement de la fourchette de prix"
         },
         "statistics": {
             "offPlan": "Projets sur plan",
@@ -140,11 +142,14 @@
             "contactUs": "Contact",
             "developers": "Promoteurs",
             "blogs": "blogs",
-            "faqs": "FAQ"
+            "faqs": "FAQ",
+            "Terms & Conditions": "Conditions générales",
+            "Privacy Policy": "Politique de confidentialité"
         },
         "legal": {
             "terms&conditions": "Conditions générales",
-            "privacypolicy": "Politique de confidentialité"
+            "privacypolicy": "Politique de confidentialité",
+            "faqs": "FAQ"
         }
     },
     "developers": {
@@ -196,9 +201,9 @@
     },
     "singleProperty": {
         "keyFeatures": "Caractéristiques clés",
-        "amenities": "Amenities",
-        "location": "Location",
-        "locationNotAvailable": "Location non disponible",
+        "amenities": "Équipements",
+        "location": "Emplacement",
+        "locationNotAvailable": "Emplacement non disponible",
         "floorPlan": "Plan du sol",
         "contactAgent": "Contacter l’agent",
         "contactUs": "Contacter-nous",
@@ -220,7 +225,9 @@
         "area": "Surface",
         "downloadFloorPlan": "Télécharger le plan d’étage",
         "previousSlide": "Diapositive précédente",
-        "nextSlide": "Diapositive suivante"
+        "nextSlide": "Diapositive suivante",
+        "description": "Description",
+        "similarProperties": "Propriétés similaires"
     },
     "faqs": {
         "faqTitle": "Questions fréquemment posées"

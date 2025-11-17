@@ -7,21 +7,24 @@ import { useTranslations } from "next-intl";
 export default function HomeVilla({data}: {data: HomePageResponse}) {
   const t = useTranslations("home");
   return (
-    <div className="w-full container-padding">
-      <div className="relative md:min-h-173 min-h-100">
+    <section className="w-full container-padding">
+      <div className="relative md:min-h-173 min-h-100 ">
         <Image
-          src={'/assets/homepage/home-vila.svg'}
-          alt="Villa"
-          fill
-          priority
-          className="object-cover object-center"
-        />
+  src="/assets/homepage/home-vila.webp"
+  alt="Villa"
+  fill
+  priority
+  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 100vw"
+  className="object-cover object-center"
+  placeholder="blur"
+  blurDataURL="/assets/homepage/home-vila.webp"
+/>
 
         <div className="absolute top-1/2 right-0 md:p-11 p-6 -translate-y-1/2 sm:max-w-140 max-w-3/4 bg-white flex flex-col lg:gap-5 gap-2.5">
-          <h5 className=" sm:leading-10 leading-5 sm:text-2xl  text-base font-[galleds] ">
+          <h5 className=" sm:leading-10 leading-5 sm:text-2xl  text-base  ">
             {data?.Our_Story?.title}
           </h5>
-          <p className=" md:leading-10 sm:text-base sm:leading-5 text-xs font-sans font-light text-dark-grey">
+          <p className=" md:leading-10 sm:text-base sm:leading-5 text-xs  font-light text-dark-grey">
             {data?.Our_Story?.short_description}
           </p>
           <Link
@@ -31,7 +34,7 @@ export default function HomeVilla({data}: {data: HomePageResponse}) {
             {t("learnMore")}
           </Link>
         </div>
-      </div>
     </div>
+    </section>
   );
 }

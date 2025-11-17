@@ -26,7 +26,7 @@ export default async function page({ params }: { params: { slug: string } }) {
   const t = await getTranslations("blogs");  
   return (
     <div className="flex flex-col items-start lg:gap-12 gap-6 container-padding lg:mt-12 mt-6">
-      <h1 className="text-dark  font-[galleds]  lg:text-6xl sm:text-3xl text-xl lg:leading-14 sm:leading-10 ">
+      <h1 className="text-dark    lg:text-6xl sm:text-3xl text-xl lg:leading-14 sm:leading-10 ">
         {blogData?.title}
       </h1>
       <div className="lg:h-96 h-60 w-full">
@@ -45,7 +45,7 @@ export default async function page({ params }: { params: { slug: string } }) {
         />
 
 
-        <span className="text-dark/70 lg:mb-12 mb-6 font-[galleds] lg:text-base sm:text-lg text-sm ">
+        <span className="text-dark/70 lg:mb-12 mb-6  lg:text-base sm:text-lg text-sm ">
           {t("publishedOn")}: {blogData?.created_at}
         </span>
       </div>

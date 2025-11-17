@@ -6,7 +6,7 @@ export default function AboutHeader({ title, description }: { title: string; des
         
         <div className="h-fit  flex items-center justify-center">
           <h1
-            className="font-[galleds]  text-dark text-center
+            className="  text-dark text-center
                        text-lg sm:text-4xl lg:text-5xl
                         lg:leading-normal"
           >

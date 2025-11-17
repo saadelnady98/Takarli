@@ -26,7 +26,7 @@ export default function CountCompRange({
             duration={2}
             start={0}
             end={startValue}
-            className={`lg:text-3xl sm:text-lg text-base text-white  font-medium font-[galleds]`}
+            className={`lg:text-3xl sm:text-lg text-base text-white  font-medium `}
           />
         )}
 
@@ -42,7 +42,7 @@ export default function CountCompRange({
             duration={2}
             start={0}
             end={endValue}
-            className={`lg:text-3xl sm:text-lg text-base text-white font-medium font-[galleds]`}
+            className={`lg:text-3xl sm:text-lg text-base text-white font-medium `}
           />
         )}
 
@@ -56,7 +56,7 @@ export default function CountCompRange({
 
       {/* Title */}
       {title && (
-        <div className={`text-sm lg:text-lg font-light text-white  font-sans `}>
+        <div className={`text-sm lg:text-lg font-light text-white   `}>
           {title}
         </div>
       )}

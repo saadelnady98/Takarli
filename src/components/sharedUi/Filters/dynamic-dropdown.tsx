@@ -2,8 +2,8 @@
 import React, { useMemo, useEffect, useState } from "react";
 import { useFetchFilter } from "@/hooks/use-fetch-filters-data";
 import { useFilters } from "@/context/filters-context";
-import SharedDropdown from "./SharedDrowpdown";
-
+import SharedDropdown from "@/components/SharedDrowpdown";
+ 
 interface DynamicDropdownProps {
   endpoint: string;
   placeholder: string;

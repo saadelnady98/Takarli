@@ -50,8 +50,8 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
           />
         </Link> */}
       </div>
-      <h5 className="text-dark lg:text-xl text-base mt-5 font-[galleds]">{member.name}</h5>
-      <p className="text-dark-grey lg:text-base text-sm mt-2.5 font-sans">{member.position}</p>
+      <h5 className="text-dark lg:text-xl text-base mt-5 ">{member.name}</h5>
+      <p className="text-dark-grey lg:text-base text-sm mt-2.5 ">{member.position}</p>
     </Link>
   );
 }
@@ -64,10 +64,10 @@ export default function OurTeam({ teamMembersData }: OurTeamProps) {
   return (
     <section className=" lg:mt-10 mt-5 text-center w-full container-padding">
       <div className="mx-auto ">
-        <h4 className="text-dark lg:text-4xl text-xl font-[galleds] font-medium">
+        <h4 className="text-dark lg:text-4xl text-xl  font-medium">
           {t("title")}
         </h4>
-        <p className="text-dark-grey font-sans lg:text-xl text-sm font-light mx-auto lg:pt-6 lg:pb-12 pt-5 pb-5 w-full lg:w-1/2">
+        <p className="text-dark-grey  lg:text-xl text-sm font-light mx-auto lg:pt-6 lg:pb-12 pt-5 pb-5 w-full lg:w-1/2">
           {t("description")}
         </p>
 

@@ -1,64 +1,93 @@
-"use client";
+// components/developersPage/DevelopersCard.tsx
+"use client"
 
-import React, { useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { Developer, DevelopersCardProps } from "./types";
-import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
-import { Loader2 } from "lucide-react";
+import React, { useState, memo, useMemo } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { Developer, DevelopersCardProps } from "./types"
+import { useTranslations } from "next-intl"
+import { motion } from "framer-motion"
+import { Loader2 } from "lucide-react"
 
-const DevelopersCard = ({ developer }: DevelopersCardProps) => {
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const t = useTranslations("developers");
+const DevelopersCard = memo(
+  function DevelopersCard({ developer }: DevelopersCardProps) {
+    const [isImageLoaded, setIsImageLoaded] = useState(false)
+    const [imageError, setImageError] = useState(false)
+    const t = useTranslations("developers")
 
-  const { image, name, description, slug }: Developer = developer;
-  const fallbackImage = "/assets/homepage/pic-1.svg";
+    const { image, name, description, slug }: Developer = developer
 
-  return (
-    <div className="border border-border2 overflow-hidden">
-      <div className="relative h-[250px] w-full ">
-        {!isImageLoaded && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-200 animate-pulse">
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
-            >
-              <Loader2 className="w-8 h-8 text-gray-500" />
-            </motion.div>
-          </div>
-        )}
+     const imageSrc = useMemo(() => {
+      return imageError || !image ? "/assets/homepage/pic-1.svg" : image
+    }, [image, imageError])
 
-        <Image
-          src={image ?? fallbackImage}
-          alt={name || "Developer image"}
-          width={600}
-          height={800}
-          priority
-          quality={75}
-          onLoad={() => setIsImageLoaded(true)}
-          className={`h-full w-full object-contain transition-opacity duration-500 ease-in-out px-4 ${
-            isImageLoaded ? "opacity-100" : "opacity-0"
-          }`}
-        />
+    const handleImageLoad = () => {
+      setIsImageLoaded(true)
+    }
+
+    const handleImageError = () => {
+      if (!imageError) {
+        setImageError(true)
+        setIsImageLoaded(false)
+      }
+    }
+
+    return (
+      <div className="border-border2 overflow-hidden border transition-all duration-300 hover:shadow-lg">
+        <div className="relative h-[200px] lg:h-[250px] w-full">
+          {!isImageLoaded && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
+              >
+                <Loader2 className="h-8 w-8 text-gray-400" />
+              </motion.div>
+            </div>
+          )}
+          <Image
+            src={imageSrc}
+            alt={name || "Developer image"}
+            width={400}
+            height={250}
+            quality={65}  
+             loading="lazy"
+            onLoad={handleImageLoad}
+            onError={handleImageError}
+            className={`h-full w-full object-contain px-4 transition-opacity duration-300 ${
+              isImageLoaded ? "opacity-100" : "opacity-0"
+            }`}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"  
+          />
+        </div>
+
+        <div className="flex flex-col gap-4 px-4 py-6">
+          <h2 className="text-dark-grey line-clamp-2 font-[galleds] text-[2rem] font-normal">
+            {name}
+          </h2>
+
+          <p className="text-dark-grey line-clamp-4 min-h-[6rem] text-sm leading-relaxed font-light">
+            {description}
+          </p>
+          <Link
+            href={`/developers/${slug}`}
+            title={`Discover more about ${name}`}
+            className="bg-dark w-fit rounded-none px-4 py-2 font-[galleds] text-xs font-extralight text-white transition-all duration-300 hover:scale-105 hover:bg-gray-800 lg:text-sm"
+            prefetch={false}
+            aria-label={`Discover more about ${name}`}
+          >
+            {t("discoverMore")}
+          </Link>
+        </div>
       </div>
+    )
+  },
+  (prevProps, nextProps) => {
+    return (
+      prevProps.developer.id === nextProps.developer.id &&
+      prevProps.developer.image === nextProps.developer.image
+    )
+  },
+)
 
-      <div className="px-4 py-6 flex flex-col gap-4">
-        <h3 className="text-dark-grey font-[galleds] text-[2.5rem] font-normal">
-          {name}
-        </h3>
-        <p className="text-dark-grey text-1  font-light line-clamp-4 min-h-24">
-          {description}
-        </p>
-        <Link
-          href={`/developers/${slug}`}
-          className="bg-dark text-white font-extralight font-[galleds] lg:text-sm text-xs px-4 py-2 rounded-none w-fit hover:bg-gray-800 transition-colors"
-        >
-          {t("discoverMore")}
-        </Link>
-      </div>
-    </div>
-  );
-};
-
-export default DevelopersCard;
+export default DevelopersCard

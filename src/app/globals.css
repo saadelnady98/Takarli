@@ -18,11 +18,16 @@
     --color-filter-border: #dddde0;
 }
 
+/* Uncomment and fix the font-family declaration */
 html,
 body {
-    font-family: "galleds", sans-serif;
+    font-family: var(--font-galleds-stars), sans-serif !important;
 }
 
+/* Or if you want to use the CSS variable approach */
+:root {
+    --font-galleds-stars: 'Galleds Stars', sans-serif;
+}
 
 .rounded-small {
     border-radius: 0px !important;
@@ -50,20 +55,6 @@ body {
     }
 }
 
-@font-face {
-    font-family: "galleds";
-    src: url("/fonts/galleds-stars.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "MulishLocal";
-    src: url("/fonts/Mulish-Regular.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
 
 
 @theme inline {
@@ -174,6 +165,16 @@ input[type="radio"]:checked+span {
 }
 
 
+
+.shimmer {
+    background: linear-gradient(90deg,
+            #e5e7eb 25%,
+            #f3f4f6 37%,
+            #e5e7eb 63%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}
+
 @keyframes shimmer {
     0% {
         background-position: -1000px 0;
@@ -184,11 +185,48 @@ input[type="radio"]:checked+span {
     }
 }
 
-.shimmer {
-    background: linear-gradient(90deg,
-            #e5e7eb 25%,
-            #f3f4f6 37%,
-            #e5e7eb 63%);
-    background-size: 1000px 100%;
-    animation: shimmer 2s infinite linear;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.animate-slide-out-left {
+    animation: slideOutLeft 0.25s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }

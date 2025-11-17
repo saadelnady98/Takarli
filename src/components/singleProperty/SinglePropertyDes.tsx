@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import React from "react";
 
 type SingleProperty = {
@@ -9,10 +10,11 @@ export default function SinglePropertyDes({
 }: {
   singlePropertyData: SingleProperty;
 }) {
+  const t = useTranslations("singleProperty");
   return (
     <div className="flex flex-col gap-4">
-      <p className="font-[galleds] text-xl lg:text-3xl text-dark">
-        Description :
+      <p className=" text-xl lg:text-3xl text-dark">
+        {t("description")} :
       </p>
 
       <div

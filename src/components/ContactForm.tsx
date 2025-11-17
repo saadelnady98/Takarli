@@ -54,7 +54,7 @@ export default function ContactForm({
       className={`mx-auto w-full ${isHome ? "border-none" : "border border-[rgba(169,169,169,1)] p-5.25 lg:p-6"
         }`}
     >
-      <h3 className= {`${isHome ? "text-white" : "text-dark"} font-[galleds] text-2xl mb-5`}>
+      <h3 className= {`${isHome ? "text-white" : "text-dark"}  text-2xl mb-5`}>
         {t("title")}
       </h3>
 

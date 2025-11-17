@@ -1,15 +1,17 @@
-
+import { AxiosError } from "axios"
 import { NextIntlClientProvider } from "next-intl"
 import { getMessages } from "next-intl/server"
 import { notFound } from "next/navigation"
 import Providers from "../providers"
 import Footer from "@/components/Footer"
 import { Toaster } from "sonner"
-// import PageTransition from "@/components/sharedUi/page-transition"
 import Navbar from "@/components/Navbar"
+import { NavbarResponse } from "@/types/navbar-types"
+import { serverApiClient } from "@/lib/new-api-client"
+import { FooterApiResponse } from "@/types/footer"
+
 const locales = ["en", "fr"]
-
-
+export const revalidate = 3600
 export default async function Layout({
   children,
   params,
@@ -19,35 +21,25 @@ export default async function Layout({
 }) {
   const { locale } = await params
 
-  if (!locales.includes(locale)) {
-    notFound()
-  }
+  if (!locales.includes(locale)) notFound()
 
-  const messages = await getMessages()
+  const messagesPromise = getMessages()
+
+  const { data: navbar } = await serverApiClient.get<NavbarResponse>("/layout/navbar")
+  const { data: footer } = await serverApiClient.get<FooterApiResponse>("/layout/footer")
+
+  const messages = await messagesPromise
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      {/* <html lang={locale} className="scroll-smooth" suppressHydrationWarning> */}
-      <main
-        className={`min-h-screen bg-background font-sans antialiased`}        >
-        <Providers>
-          <div className="relative  flex min-h-screen flex-col">
-            {/* <PageTransition> */}
-              < Navbar />
-              <main className="flex-1 w-full mx-auto ">
-                {children}
-              </main>
-              <Footer />
-            {/* </PageTransition> */}
-          </div>
-          <Toaster />
-        </Providers>
-      </main>
-      {/* </html> */}
+      <Providers>
+        <Navbar data={"data" in navbar ? navbar.data : null} />
+
+        <main role="main">{children}</main>
+
+        <Footer data={"data" in footer ? footer.data : null} />
+        <Toaster />
+      </Providers>
     </NextIntlClientProvider>
   )
-}
-
-export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }))
 }

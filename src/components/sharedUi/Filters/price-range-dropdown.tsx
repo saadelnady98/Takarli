@@ -38,15 +38,21 @@ export default function PriceRangeDropdown() {
   }, [filters.priceRange]);
 
   useEffect(() => {
-    const updateWidth = () => {
-      if (triggerRef.current) {
-        setMenuWidth(triggerRef.current.offsetWidth);
+  if (!triggerRef.current) return;
+
+  const element = triggerRef.current;
+  const observer = new ResizeObserver((entries) => {
+    for (const entry of entries) {
+      if (entry.contentRect.width) {
+        setMenuWidth(entry.contentRect.width);
       }
-    };
-    updateWidth();
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
-  }, []);
+    }
+  });
+
+  observer.observe(element);
+  return () => observer.disconnect();
+}, []);
+
 
   useEffect(() => {
     if (filters.priceRange && PRICE_RANGES.length > 0) {
@@ -76,29 +82,29 @@ export default function PriceRangeDropdown() {
     (price: number): string => {
       if (price === Infinity) return "";
       const locale =
-        currency === "Euro"
+        currency === "EUR"
           ? "fr-FR"
-          : currency === "Dollar"
+          : currency === "USD"
           ? "en-US"
-          : currency === "Dirham"
+          : currency === "AED"
           ? "ar-AE"
           : "en-US";
 
       const options: Intl.NumberFormatOptions = { maximumFractionDigits: 0 };
 
-      if (currency !== "Dirham") {
+      if (currency !== "AED") {
         options.style = "currency";
         options.currency =
-          currency === "Euro"
+          currency === "EUR"
             ? "EUR"
-            : currency === "Dollar"
+            : currency === "USD"
             ? "USD"
             : "AED";
       }
 
       return (
         new Intl.NumberFormat(locale, options).format(price) +
-        (currency === "Dirham" ? " " + currency : "")
+        (currency === "AED" ? " " + currency : "")
       );
     },
     [currency]
@@ -130,7 +136,6 @@ export default function PriceRangeDropdown() {
     [PRICE_RANGES, setPriceRange]
   );
 
-  // 🟡 Loading or empty states
   if (isLoading)
     return (
       <Button
@@ -179,7 +184,6 @@ export default function PriceRangeDropdown() {
         </Button>
       </DropdownTrigger>
 
-      {/* ✅ Dropdown matches trigger width */}
       <DropdownMenu
         aria-label={t("selectPriceRange")}
         disallowEmptySelection
@@ -190,7 +194,7 @@ export default function PriceRangeDropdown() {
           width: menuWidth ? `${menuWidth}px` : "auto",
           minWidth: menuWidth ? `${menuWidth}px` : "auto",
         }}
-        className="rounded-none max-h-60 overflow-auto shadow-md"
+        className="rounded-none max-h-60 overflow-auto px-0"
       >
         {PRICE_RANGES.map((range) => (
           <DropdownItem key={range.label} className="rounded-none">

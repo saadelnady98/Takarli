@@ -7,7 +7,7 @@ import SinglePropertyFloor from "@/components/singleProperty/SinglePropertyFloor
 import SinglePropertyMapSection from "@/components/singleProperty/SinglePropertyMap"
 import SinglePropertySimiler from "@/components/singleProperty/SinglePropertySimiler"
 import AgentCard from "@/components/singleProperty/AgentCard"
-import { serverApiClient } from "@/lib/new-api-client"
+import { fetchPageData } from "@/lib/api-fetcher"
 
 type PropertyImage = string
 
@@ -116,9 +116,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const param = await params
   const slug = param.slug
 
-  const { data } = await serverApiClient.get<{ data: SinglePropertyResponse }>(`/property/${slug}`)
-
-  const singlePropertyData = data.data
+  const { data } = await fetchPageData<SinglePropertyResponse>(`property/${slug}`)
+  const singlePropertyData = data
 
   return (
     <div className="container-padding flex flex-col gap-5 lg:gap-8">

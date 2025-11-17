@@ -8,7 +8,7 @@ export default function AboutCompany({ title, description, image }: { title: str
         {/* Left Content */}
         <div className="flex-1 lg:px-7 px-3.5">
           <h2
-            className="font-[galleds] text-dark
+            className=" text-dark
                      tracking-normal
                        text-lg sm:text-3xl
                        mb-5 xl:mb-4"

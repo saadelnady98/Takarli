@@ -25,10 +25,10 @@ const config: Config = {
   animation: {
     shimmer: "shimmer 2s infinite linear",
   },
-        fontFamily: {
-      sans: ["var(--font-galleds)"],
-      galleds: ["var(--font-galleds)"],
-    },
+   fontFamily: {
+        'galleds-stars': ['var(--font-galleds-stars)'],
+      },
+
       colors: {
         primary: "var(--color-primary)",
         "primary-foreground": "var(--color-primary-foreground)",

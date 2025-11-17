@@ -1,4 +1,4 @@
-export interface FooterApiResponse {
+export interface footerData {
   social?: Record<string, string>
   contacts?: {
     email?: string
@@ -16,4 +16,31 @@ export interface FooterApiResponse {
   contact_info?: {
     text?: string
   }
+}
+export interface FooterApiResponse {
+  data: footerData
+}
+export interface FooterLinkItem {
+  id: string | number
+  path: string
+  titleKey: string
+}
+
+export interface LegalLinkItem {
+  id: string | number
+  path: string
+  title: string
+}
+
+export interface FooterNavigationProps {
+  t: (key: string) => string
+}
+
+export interface ConnectSectionProps {
+  t: (key: string) => string
+}
+
+export interface FooterBottomProps {
+  footer: footerData
+  t: (key: string) => string
 }

@@ -14,7 +14,7 @@ function FaqItem({ question, answer, isOpen, onToggle }: FaqItemProps) {
           }`}
         aria-expanded={isOpen}
       >
-        <span className="lg:text-3xl  text-xl font-[galleds] text-left">
+        <span className="lg:text-3xl  text-xl  text-left">
           {question}
         </span>
 
@@ -46,7 +46,7 @@ export default function FaqsCard({ faqsData }: { faqsData: FaqItemProps[] }) {
 
   return (
     <section className="lg:mb-24 mb-10 lg:mt-9 mt-5 flex flex-col lg:gap-7.5 gap-5 container-padding">
-      <h1 className="text-dark text-center lg:text-4xl text-xl uppercase font-[galleds]">
+      <h1 className="text-dark text-center lg:text-4xl text-xl uppercase ">
         {t("faqTitle")}
       </h1>
 

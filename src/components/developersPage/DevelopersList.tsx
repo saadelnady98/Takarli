@@ -1,76 +1,80 @@
+// components/developersPage/DevelopersList.tsx
 "use client"
 
-import React, { useEffect, useState } from "react"
-import { usePagination } from "@/hooks/shared-pagintaion"
+import React, { useEffect, useState, useCallback, memo, useMemo } from "react"
+import { usePagination } from "@/hooks/use-pagination"
 import DevelopersCard from "@/components/developersPage/DevelopersCard"
 import Pagination from "@/components/sharedUi/Pagenation/Pagenation"
-import GenericHeader from "@/components/sharedUi/generic-header"
 import { Developer } from "./types"
 import LoadingOverlay from "../loading/loading"
-import { useTranslations } from "next-intl" // ✅ اضفناها
+import { useTranslations } from "next-intl"
 
 interface DevelopersListProps {
   developers: Developer[]
-  currentPage: number,
-  totalPages: number 
+  currentPage: number
+  totalPages: number
 }
 
-export default function DevelopersList({
-  developers,
-  currentPage,
-  totalPages,
+const DevelopersList = memo(function DevelopersList({ 
+  developers, 
+  currentPage, 
+  totalPages 
 }: DevelopersListProps) {
-
-  const t = useTranslations("developers")  
-
+  const t = useTranslations("developers")
   const { handlePageChange } = usePagination()
-  const [isNavigating, setIsNavigating] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false)
 
-  const handlePageChangeWithLoading = (page: number) => {
-    setIsNavigating(true);
-    handlePageChange(page);
-  };
+   const memoizedDevelopers = useMemo(() => developers, [developers])
+
+  const handlePageChangeWithLoading = useCallback((page: number) => {
+    if (page !== currentPage) {
+      setIsNavigating(true)
+      handlePageChange(page)
+    }
+  }, [handlePageChange, currentPage])
 
   useEffect(() => {
-    setIsNavigating(false);
-  }, [currentPage]);
+    setIsNavigating(false)
+  }, [currentPage])
+
+   const developersCards = useMemo(() => (
+    memoizedDevelopers.map((developer) => (
+      <DevelopersCard 
+        key={developer.id} 
+        developer={developer} 
+      />
+    ))
+  ), [memoizedDevelopers])
 
   if (isNavigating) {
-    return <LoadingOverlay/>
+    return <LoadingOverlay />
   }
 
   return (
-    <div className="mt-11 gap-[2.5rem] container-padding">
-      <GenericHeader
-        title={t("headerTitle")}  
-        span={t("headerSpan")}    
-        image={"/assets/single-property/img-5.svg"}
-        altText="Developers page background"
-        darkOverlay
-      />
-
-      <div className="my-11 grid grid-cols-1 gap-10 px-4 md:grid-cols-2 md:px-0  xl:grid-cols-3 2xl:grid-cols-4">
-        {developers.map((developer) => (
-          <DevelopersCard key={developer.id} developer={developer} />
-        ))}
+    <div >
+    
+      
+      <div className="my-11 grid grid-cols-1 gap-10 px-4 md:grid-cols-2 md:px-0 xl:grid-cols-3 2xl:grid-cols-4">
+        {developersCards}
       </div>
 
-      {/* No Developers Message */}
-      {developers.length === 0 && (
+      {memoizedDevelopers.length === 0 && (
         <div className="text-center py-12">
           <p className="text-gray-500 text-lg">
-            {t("noDevelopers")}     
+            {t("noDevelopers")}
           </p>
         </div>
       )}
 
       {totalPages > 1 && (
-        <Pagination
-          totalPages={totalPages}
-          currentPage={currentPage}
-          onPageChange={handlePageChangeWithLoading}
+        <Pagination 
+          totalPages={totalPages} 
+          currentPage={currentPage} 
+          onPageChange={handlePageChangeWithLoading} 
         />
       )}
     </div>
   )
-}
+})
+
+export default DevelopersList

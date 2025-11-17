@@ -206,7 +206,7 @@ export default function SinglePropertySwiper({
                     alt={`${item.title} - ${item.type}`}
                     width={800}
                     height={800}
-                    className="h-full w-full object-contain"
+                    className="h-full w-full"
                     priority
                   />
                 </div>

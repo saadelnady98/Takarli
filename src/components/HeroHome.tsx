@@ -2,17 +2,18 @@
 import { HomePageResponse } from "@/types/home-types";
 import CountCompRange from "@/components/CountCompRange";
 import HeroHomeSwiper from "@/components/homePage/herohomeswiper/HeroHomeSwiper";
-import HomeFilter from "@/components/homePage/HomeFilter";
 import { useTranslations } from "next-intl";
+import { Suspense, lazy } from "react";
+
+const LazyHomeFilter = lazy(() => import("@/components/homePage/HomeFilter"));
 
 export default function HeroHome({ data }: { data: HomePageResponse }) {
-  // ✅ تعديل الماب على الصور بناءً على الريسبونس الجديد
   const t = useTranslations("home.statistics");
-  const sliderImages =
-    data?.slider?.images?.map((img, i) => ({
-      id: i,
-      img, // الصورة نفسها هي الرابط
-    })) || [];
+  
+  const sliderImages = data?.slider?.images?.map((img, i) => ({
+    id: i,
+    img,
+  })) || [];
 
   const countItems = [
     { id: 1, title: t("offPlan"), count: data?.statistics?.off_plan || 0 },
@@ -21,31 +22,31 @@ export default function HeroHome({ data }: { data: HomePageResponse }) {
   ];
 
   return (
-    <section className="relative min-h-[850px] pt-24 w-full flex justify-center items-center ">
-      {/* Background Swiper */}
+    <section className="relative min-h-[850px] pt-24 w-full flex justify-center items-center">
       <div className="absolute inset-0 z-0">
         <HeroHomeSwiper data={sliderImages} />
       </div>
 
-      {/* Content Overlay */}
-      <div className="container-padding  max-w-full overflow-hidden mx-auto flex flex-col items-center text-center xl:gap-10 gap-5 relative z-5">
-        {/* Title */}
-        <h1 className="font-[galleds] xl:w-3/4 text-white lg:text-5xl text-3xl mx-auto xl:min-h-[140px] xl:leading-[140%]">
+      <div className="container-padding max-w-full overflow-hidden mx-auto flex flex-col items-center text-center xl:gap-10 gap-5 relative z-10">
+        <h1 className="xl:w-3/4 text-white lg:text-5xl sm:text-3xl text-xl mx-auto xl:min-h-[140px] xl:leading-[140%] min-h-0">
           {data?.slider?.text}
         </h1>
 
-        {/* Description */}
-        <p className="text-white font-light lg:w-1/2 lg:text-xl text-sm mx-auto">
+        <p className="text-white font-light lg:w-1/2 lg:text-xl sm:text-sm text-xs mx-auto min-h-[60px]">
           {data?.slider?.description}
         </p>
 
-        {/* Filter Section */}
-        <HomeFilter />
+        <Suspense fallback={<div className="h-24 w-full animate-pulse bg-gray-200" />}>
+          <LazyHomeFilter />
+        </Suspense>
 
-        {/* Statistics */}
-        <div className="grid grid-cols-3 justify-center items-start gap-4 lg:gap-16 w-full">
+        <div className="grid grid-cols-3 justify-center items-start gap-4 lg:gap-16 w-full min-h-[100px]">
           {countItems.map((item) => (
-            <CountCompRange key={item.id} startValue={item.count} title={item.title} />
+            <CountCompRange 
+              key={item.id} 
+              startValue={item.count} 
+              title={item.title} 
+            />
           ))}
         </div>
       </div>

@@ -1,8 +1,7 @@
-"use client";
-import React from "react";
-import SharedDrowpdown from "./Filters/SharedDrowpdown";
-import { SharedModalBodyProps } from "@/types/interfaceData";
-
+"use client"
+import React from "react"
+import { SharedModalBodyProps } from "@/types/interfaceData"
+import SharedDrowpdown from "../SharedDrowpdown"
 export default function SharedModalBody({ title, data, value, onChange }: SharedModalBodyProps) {
   return (
     <div className="flex flex-col">
@@ -13,5 +12,5 @@ export default function SharedModalBody({ title, data, value, onChange }: Shared
         </div>
       </div>
     </div>
-  );
+  )
 }

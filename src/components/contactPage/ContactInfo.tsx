@@ -14,7 +14,7 @@ export default function ContactInfo({ data }: { data: ContactResponse }) {
         {t("title")}
       </p>
 
-      <h3 className="lg:text-4xl text-2xl font-[galleds] lg:my-6 my-2.5 text-dark">
+      <h3 className="lg:text-4xl text-2xl  lg:my-6 my-2.5 text-dark">
         {t("subtitle")}
       </h3>
 

@@ -10,38 +10,9 @@ import Pagination from "@/components/sharedUi/Pagenation/Pagenation"
 import { useTranslations } from "next-intl"
 import LoadingOverlay from "../loading/loading"
 import Error from "@/app/[locale]/[propertySlug]/error"
+import { PropertiesClientProps, PropertiesPageData, Property } from "@/types/properties-types"
 
-type PropertiesClientProps = {
-  locale: string
-  propertySlug: string
-  page: number
-  per_page: number
-}
-type Property = {
-  id: number
-  slug: string
-  title: string
-  starting_price: string
-  currency: string
-  area: string
-  city: string
-  country: {
-    id: number
-    name: string
-    slug: string
-  }
-  image: string
-}
-
-type PropertiesPageData = {
-  country: {
-    id: number
-    slug: string
-    name: string
-    description?: string
-  }
-  properties: Property[]
-}
+ 
 export default function PropertiesClient({
   locale,
   propertySlug,
@@ -94,7 +65,7 @@ if (error) {
         <h2 className="text-dark text-center text-2xl font-bold">
           {response?.data.country.name} {t("properties")}
         </h2>
-        <p className="text-dark-grey m-auto text-center font-sans text-base lg:w-3/4 lg:text-xl">
+        <p className="text-dark-grey m-auto text-center  text-base lg:w-3/4 lg:text-xl">
           {response?.data.country.description}
         </p>
       </div>

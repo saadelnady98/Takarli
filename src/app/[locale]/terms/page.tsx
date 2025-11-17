@@ -25,7 +25,7 @@ export default async function TermsPage() {
 
   return (
     <main className="text-dark flex flex-col items-center lg:gap-8 gap-4 lg:pt-8 pt-4 lg:pb-24 pb-12 container-padding">
-      <h1 className="font-[galleds] lg:text-4xl sm:text-3xl text-2xl text-center text-dark">
+      <h1 className=" lg:text-4xl sm:text-3xl text-2xl text-center text-dark">
         {data.text}
       </h1>
 
