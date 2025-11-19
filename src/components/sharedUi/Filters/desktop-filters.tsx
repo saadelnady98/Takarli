@@ -40,6 +40,7 @@ export const DesktopFilters: React.FC<DesktopFiltersProps> = ({
         filterKey={config.key}
         beforeImage={<FilterIcon type={config.icon as FilterIconProps["type"]} />}
         isEnabled={config.isEnabled}
+        isFilter={true}
       />
     </div>
   )
@@ -49,7 +50,7 @@ export const DesktopFilters: React.FC<DesktopFiltersProps> = ({
       <label className="text-dark mb-2 text-sm font-medium max-xl:text-center">
         {config.label}
       </label>
-      <PriceRangeDropdown />
+      <PriceRangeDropdown isFilter={false} />
     </div>
   )
 

@@ -21,7 +21,7 @@ export const LangCurrProvider = ({ children }: { children: React.ReactNode }) =>
   const pathname = usePathname();
   const language = useLocale();
 
-  const [currency, setCurrencyState] = useState("usd");
+  const [currency, setCurrencyState] = useState("USD");
 
   useEffect(() => {
     if (typeof window === "undefined") return;

@@ -2,7 +2,7 @@ import React from "react";
 import AboutHeader from "@/components/aboutPage/AboutHeader";
 import AboutCompany from "@/components/aboutPage/AboutCompany";
 import OurApproach from "@/components/aboutPage/OurApproach";
-import OurTeam from "@/components/aboutPage/OurTeam";
+// import OurTeam from "@/components/aboutPage/OurTeam";
 import ExpertForm from "@/components/aboutPage/ExpertForm";
 import { fetchPageData } from "@/lib/api-fetcher";
 
@@ -58,7 +58,7 @@ export default async function AboutPage() {
         promise={data.Promise}
       />
 
-      <OurTeam teamMembersData={data.OurTeam} />
+      {/* <OurTeam teamMembersData={data.OurTeam} /> */}
       <ExpertForm />
     </main>
   );

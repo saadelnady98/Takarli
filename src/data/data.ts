@@ -41,7 +41,7 @@ export const footer_main_links: footer_main_linksProps[] = [
   { id: 4, titleKey: "aboutUs", path: "/about-us" },
   { id: 5, titleKey: "contactUs", path: "/contact-us" },
   { id: 6, titleKey: "developers", path: "/developers" },
-  { id: 7, titleKey: "blogs", path: "/blogs" },
+  // { id: 7, titleKey: "blogs", path: "/blogs" },
   // { id: 8, titleKey: "faqs", path: "/faqs" },
 ]
 export const footer_links: footer_linksProps[] = [

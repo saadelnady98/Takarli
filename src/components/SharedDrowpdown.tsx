@@ -99,16 +99,26 @@ export default function SharedDropdown<T>({
   }
 
   return (
-    <Dropdown className="h-full w-full rounded-none shadow-sm">
+    <Dropdown
+      className="h-full w-full rounded-none shadow-sm"
+      placement="bottom-start"
+      shouldBlockScroll={false}
+      shouldFlip={false}
+      offset={2}
+      // classNames={{
+      //   base: "w-full",
+      //   content: "w-full min-w-full rounded-none shadow-sm",
+      // }}
+    >
       <DropdownTrigger>
         <Button
           ref={triggerRef}
           disabled={!data.length}
           variant="bordered"
-          className={`flex h-[48px] w-full items-center justify-between rounded-none px-3 py-2 text-base outline-none hover:border-gray-400 focus:outline-none ${
+          className={`relative flex h-[48px] w-full items-center justify-between rounded-none px-3 py-2 text-base outline-none hover:border-gray-400 focus:outline-none ${
             !data.length
               ? "cursor-not-allowed bg-gray-100 text-gray-400"
-              : hasValue && isFilter
+              : hasValue
                 ? "text-dark bg-[#d4d4d4]"
                 : "text-dark-grey bg-white"
           }`}
@@ -140,17 +150,14 @@ export default function SharedDropdown<T>({
           width: menuWidth && !isFilter ? `${menuWidth}px` : "100%",
           minWidth: menuWidth && !isFilter ? `${menuWidth}px` : "100%",
         }}
-        
-        className="m-0 max-h-60 w-full overflow-y-auto rounded-none px-0"
+        className="m-0  max-h-35 lg:max-h-60  w-full overflow-y-auto rounded-none px-0"
       >
         {data.map((item) => (
           <DropdownItem
             key={item.value}
-            className="w-full rounded-none capitalize data-[hover=true]:bg-blue-100 data-[selectable=true]:cursor-pointer"
+            className="w-full rounded-none border-b-[0.0625rem] border-[#d4d4d4] capitalize data-[hover=true]:bg-blue-100 data-[selectable=true]:cursor-pointer"
           >
-            <span className="block w-full truncate border-b-[0.0625rem] border-[#d4d4d4] py-2 text-wrap break-words">
-              {item.label}
-            </span>
+            <span className="block w-full truncate py-2 text-wrap break-words">{item.label}</span>
           </DropdownItem>
         ))}
       </DropdownMenu>

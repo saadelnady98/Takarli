@@ -8,225 +8,236 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-    --color-dark: #1a1616;
-    --color-dark-grey: #474747;
-    --color-border: #d2d2d2;
-    --color-badge: #f1f1f1;
-    --color-text-Paragraph: #b7b7b7;
-    --color-border-darker: #d6d6d6;
-    --color-text-darker: #8c8c8c;
-    --color-filter-border: #dddde0;
+  --color-dark: #1a1616;
+  --color-dark-grey: #474747;
+  --color-border: #d2d2d2;
+  --color-badge: #f1f1f1;
+  --color-text-Paragraph: #b7b7b7;
+  --color-border-darker: #d6d6d6;
+  --color-text-darker: #8c8c8c;
+  --color-filter-border: #dddde0;
 }
 
 /* Uncomment and fix the font-family declaration */
 html,
 body {
-    font-family: var(--font-galleds-stars), sans-serif !important;
+  font-family: var(--font-galleds-stars), sans-serif !important;
 }
 
 /* Or if you want to use the CSS variable approach */
 :root {
-    --font-galleds-stars: 'Galleds Stars', sans-serif;
+  --font-galleds-stars: "Galleds Stars", sans-serif;
 }
 
 .rounded-small {
-    border-radius: 0px !important;
+  border-radius: 0px !important;
 }
 
 /* إضافة container-padding هنا */
 @layer components {
+  .container-padding {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  @media (min-width: 1024px) {
     .container-padding {
-        padding-left: 18px;
-        padding-right: 18px;
+      padding-left: 70px;
+      padding-right: 70px;
     }
+  }
 
-    @media (min-width: 1024px) {
-        .container-padding {
-            padding-left: 70px;
-            padding-right: 70px;
-        }
+  @media (min-width: 1280px) {
+    .container-padding {
+      padding-left: 140px;
+      padding-right: 140px;
     }
-
-    @media (min-width: 1280px) {
-        .container-padding {
-            padding-left: 140px;
-            padding-right: 140px;
-        }
-    }
+  }
 }
 
-
-
 @theme inline {
-    --radius-sm: calc(var(--radius) - 4px);
-    --radius-md: calc(var(--radius) - 2px);
-    --radius-lg: var(--radius);
-    --radius-xl: calc(var(--radius) + 4px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
 
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-card: var(--card);
-    --color-card-foreground: var(--card-foreground);
-    --color-popover: var(--popover);
-    --color-popover-foreground: var(--popover-foreground);
-    --color-primary: var(--primary);
-    --color-primary-foreground: var(--primary-foreground);
-    --color-secondary: var(--secondary);
-    --color-secondary-foreground: var(--secondary-foreground);
-    --color-muted: var(--muted);
-    --color-muted-foreground: var(--muted-foreground);
-    --color-accent: var(--accent);
-    --color-accent-foreground: var(--accent-foreground);
-    --color-destructive: var(--destructive);
-    --color-border: var(--border);
-    --color-input: var(--input);
-    --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 }
 
 :root {
-    --radius: 0.625rem;
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --border: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --border: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
 }
 
 .dark {
-    --background: oklch(0.145 0 0);
-    --foreground: oklch(0.985 0 0);
-    --primary: oklch(0.922 0 0);
-    --primary-foreground: oklch(0.205 0 0);
-    --border: oklch(1 0 0 / 10%);
-    --ring: oklch(0.556 0 0);
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --ring: oklch(0.556 0 0);
 }
 
 @layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
+  * {
+    @apply border-border outline-ring/50;
+  }
 
-    body {
-        @apply bg-background text-foreground;
-    }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
 
 input[type="radio"] {
-    accent-color: #a9a9a9;
+  accent-color: #a9a9a9;
 }
 
-input[type="radio"]+span {
-    color: #a9a9a9;
+input[type="radio"] + span {
+  color: #a9a9a9;
 }
 
 input[type="radio"]:checked {
-    accent-color: #1e1e1e;
+  accent-color: #1e1e1e;
 }
 
-input[type="radio"]:checked+span {
-    color: #1e1e1e;
+input[type="radio"]:checked + span {
+  color: #1e1e1e;
 }
 
 .react-international-phone-input-container .react-international-phone-country-selector-button {
-    border: none;
+  border: none;
 }
 
 .react-international-phone-flag {
-    border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 .react-international-phone-country-selector-button__button-content {
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
 .react-international-phone-flag {
-    border-radius: 0 !important;
+  border-radius: 0 !important;
 }
 
 .react-international-phone-country-selector-button {
-    padding: 0 !important;
-    background: transparent !important;
-    border-radius: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
 }
 
 .react-international-phone-country-selector-button img {
-    display: block;
-    border-radius: 0 !important;
+  display: block;
+  border-radius: 0 !important;
 }
 
 .react-international-phone-country-selector-button:focus {
-    box-shadow: none !important;
-    outline: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
-
-
 .shimmer {
-    background: linear-gradient(90deg,
-            #e5e7eb 25%,
-            #f3f4f6 37%,
-            #e5e7eb 63%);
-    background-size: 1000px 100%;
-    animation: shimmer 2s infinite linear;
+  background: linear-gradient(90deg, #e5e7eb 25%, #f3f4f6 37%, #e5e7eb 63%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite linear;
 }
 
 @keyframes shimmer {
-    0% {
-        background-position: -1000px 0;
-    }
+  0% {
+    background-position: -1000px 0;
+  }
 
-    100% {
-        background-position: 1000px 0;
-    }
+  100% {
+    background-position: 1000px 0;
+  }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 .animate-fadeIn {
-    animation: fadeIn 0.3s ease-out;
+  animation: fadeIn 0.3s ease-out;
 }
 
 @keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
 
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 @keyframes slideOutLeft {
-    from {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
 
-    to {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
 }
 
 .animate-slide-in-left {
-    animation: slideInLeft 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  animation: slideInLeft 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
 
 .animate-slide-out-left {
-    animation: slideOutLeft 0.25s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+  animation: slideOutLeft 0.25s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
+
+[data-placement^="top"] {
+  transform: translateY(100%) !important;
+  width: auto!important ;
+}
+/* 
+.price-dropdown {
+  max-width: auto !important;
+  width: auto !important;
+}
+.price-dropdown {
+  position: relative;
+}
+
+.price-range-menu{
+  background-color: red !important;
+  width: 100%;
+} */

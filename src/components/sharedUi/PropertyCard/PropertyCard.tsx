@@ -6,6 +6,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { Loader2 } from "lucide-react"
 import type { PropertyCardProps } from "./types"
+import { getCurrencyIcon } from "@/lib/utils"
 
 /**
  * PropertyCard Component
@@ -84,23 +85,34 @@ function PropertyCardComponent({
             {data.name || data.title}
           </h4>
         )}
-
         {data.area && (
           <div
             className={`mt-1 flex items-center gap-1.5 ${
               align === "center" ? "justify-center" : ""
             }`}
           >
-            <p className="text-xs font-light text-white/90 lg:text-sm">
-              {data.area}
-            </p>
+            <p className="text-xs font-light text-white/90 lg:text-[18px]">{data.area}</p>
           </div>
         )}
-
-        {data.starting_price && (
+        {/* {data.starting_price && (
           <p className="mt-2 text-base font-bold text-white lg:text-xl">
             {`${data.currency ?? ""} ${data.starting_price}`}
           </p>
+        )}  */}
+        {data.starting_price && (
+          <div className="mt-2 flex items-center gap-1">
+            {data.currency && (
+              <Image
+                src={getCurrencyIcon(data.currency,false)}
+                alt={data.currency}
+                width={30}
+                height={30}
+                className="h-6 w-6"
+                unoptimized
+              />
+            )}
+            <span className="font-bold text-[#ddd] lg:text-lg">{`${data.starting_price}`}</span>
+          </div>
         )}
       </div>
     </Link>

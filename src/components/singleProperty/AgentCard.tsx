@@ -24,7 +24,7 @@ export default function AgentCard({
   return (
     <>
       {!open && (
-        <div className="from-badge flex w-full flex-col gap-4 bg-gradient-to-b to-white p-6">
+        <div className="from-badge flex w-full flex-col gap-4 bg-gradient-to-b to-white lg:p-6">
           <h4 className="text-dark text-xl lg:text-3xl">{t("contactAgent")}</h4>
           <div className="flex items-center gap-4">
             <Link

@@ -54,7 +54,7 @@ export default function FilterBar() {
       {priceRelatedFilters.map((config) => (
         <div key={config.key} className="flex flex-col">
           <label className="text-dark mb-2 text-sm font-medium">{config.label}</label>
-          <PriceRangeDropdown />
+          <PriceRangeDropdown isFilter={true} />
         </div>
       ))}
     </div>

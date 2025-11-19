@@ -79,30 +79,23 @@ const LangCurrSwitcher: React.FC<Lang_CurrProps> = ({ onClick, data }) => {
           aria-label="Takarli"
         />
       </Link>
-
       <NavLinks data={data} />
-
       <button
         type="button"
         onClick={handleClick}
         aria-label="Change language and currency"
-        className="flex h-12 items-center justify-between gap-1.5 border border-[#d4d4d4] p-2 transition-colors 
-                   hover:border-gray-400 focus:outline-none cursor-pointer sm:min-h-8 sm:min-w-28 lg:min-h-9 lg:min-w-36"
+        className={`flex  items-center self-center  justify-between gap-1.5 h-8 sm:h-10 border px-2 border-[#d4d4d4] max-w-fit transition-colors 
+                   hover:border-gray-400 focus:outline-none cursor-pointer ${textColorClass}`}
       >
-        <div
-          className={`${textColorClass} flex items-center gap-1.5 text-xs text-nowrap lg:text-base`}
-        >
-          <Image
-            src={globeSrc}
-            alt="Globe icon"
-            width={16}
-            height={16}
-            unoptimized
-            className="object-cover max-lg:hidden lg:h-5 lg:w-5"
-          />
-          {language.toUpperCase()} - {formatCurrency(currency)}
-        </div>
-
+        <Image
+          src={globeSrc}
+          alt="Globe icon"
+          width={24}
+          height={24}
+          unoptimized
+          className="object-contain object-center  hidden lg:block h-4 sm:w-6 sm:h-6 w-4"
+        />
+        {language.toUpperCase()} - {formatCurrency(currency)}
         <ChevronIcon
           chevronColorClass={chevronColorClass}
         />

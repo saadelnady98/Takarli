@@ -17,7 +17,7 @@ const DevelopersCard = memo(
 
     const { image, name, description, slug }: Developer = developer
 
-     const imageSrc = useMemo(() => {
+    const imageSrc = useMemo(() => {
       return imageError || !image ? "/assets/homepage/pic-1.svg" : image
     }, [image, imageError])
 
@@ -34,7 +34,7 @@ const DevelopersCard = memo(
 
     return (
       <div className="border-border2 overflow-hidden border transition-all duration-300 hover:shadow-lg">
-        <div className="relative h-[200px] lg:h-[250px] w-full">
+        <div className="relative h-[200px] w-full lg:h-[250px]">
           {!isImageLoaded && (
             <div className="absolute inset-0 flex items-center justify-center">
               <motion.div
@@ -50,14 +50,14 @@ const DevelopersCard = memo(
             alt={name || "Developer image"}
             width={400}
             height={250}
-            quality={65}  
-             loading="lazy"
+            quality={65}
+            loading="lazy"
             onLoad={handleImageLoad}
             onError={handleImageError}
             className={`h-full w-full object-contain px-4 transition-opacity duration-300 ${
               isImageLoaded ? "opacity-100" : "opacity-0"
             }`}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"  
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
           />
         </div>
 
@@ -66,7 +66,7 @@ const DevelopersCard = memo(
             {name}
           </h2>
 
-          <p className="text-dark-grey line-clamp-4 min-h-[6rem] text-sm leading-relaxed font-light">
+          <p className="text-dark-grey line-clamp-2 text-sm leading-relaxed font-light">
             {description}
           </p>
           <Link

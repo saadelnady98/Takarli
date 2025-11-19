@@ -42,9 +42,8 @@ interface MobileNavbarProps {
 }
 
 const DesktopNavbar = React.memo(function DesktopNavbar({ isHome, navData }: DesktopNavbarProps) {
-  const navbarClass = `${NAVBAR_CLASSES.desktop.base} ${
-    isHome ? NAVBAR_CLASSES.desktop.home : NAVBAR_CLASSES.desktop.default
-  }`
+  const navbarClass = `${NAVBAR_CLASSES.desktop.base} ${isHome ? NAVBAR_CLASSES.desktop.home : NAVBAR_CLASSES.desktop.default
+    }`
 
   return (
     <div className={navbarClass} role="navigation" aria-label="Main navigation">

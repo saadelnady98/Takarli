@@ -45,7 +45,7 @@ interface StaticLinkProps {
 }
 
 const getLinkStyles = (isHome: boolean) => 
-  `text-sm uppercase transition-colors duration-200 lg:text-lg ${
+  `text-sm uppercase transition-colors duration-200 text-[14px] lg:text-[16px] xl:text-[18px]  ${
     isHome ? "text-white hover:text-white/80" : "text-dark hover:text-dark-grey"
   }`
 
@@ -65,7 +65,7 @@ const StaticLink = React.memo(function StaticLink({ item, isHome, t }: StaticLin
   return (
     <Link
       href={item.path}
-      className={`${getLinkStyles(isHome)} h-[100%] flex justify-center items-center`}
+      className={`${getLinkStyles(isHome)} h-[100%] flex justify-center items-center  `}
       prefetch={false}
     >
       {t(item.title)}
@@ -117,7 +117,7 @@ const CitiesDropdown = React.memo(function CitiesDropdown({
   return (
     <motion.div
       {...DROPDOWN_ANIMATION}
-      className="absolute top-[60px] left-1/2 z-50 hidden -translate-x-1/2 group-hover:block  "
+      className="absolute top-[60px] left-0 z-50 hidden group-hover:block  "
     >
       <div className="min-w-[200px] overflow-hidden border border-gray-100 bg-white/95 rounded shadow-lg backdrop-blur-md">
         <ul className="flex h-fit max-h-[250px] flex-col overflow-y-auto ">
@@ -148,7 +148,7 @@ const CountryDropdown = React.memo(function CountryDropdown({
   return (
     <div key={country.id} className="group relative">
       <motion.button
-        {...HOVER_ANIMATION}
+        // {...HOVER_ANIMATION}
         onClick={handleCountryClick}
         className={`${getLinkStyles(isHome)} cursor-pointer relative  h-[100%] block`}
         aria-haspopup="true"
@@ -215,7 +215,7 @@ export default function NavLinks({ data }: NavLinksProps) {
     <div className="hidden items-center justify-center lg:flex">
       <motion.div
         {...ANIMATION_CONFIG}
-        className="flex items-stretch gap-10 h-full"
+        className="flex items-stretch gap-5 h-full"
         role="navigation"
         aria-label="Main navigation"
       >

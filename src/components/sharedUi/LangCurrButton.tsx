@@ -56,7 +56,7 @@ const LangCurrModalContent = React.memo(
 
         <ModalFooter className="flex w-full justify-end p-0">
           <Button
-            className="bg-dark flex h-[2.5rem] w-[6.125rem] cursor-pointer items-center justify-center rounded-none text-white transition hover:opacity-90"
+            className="bg-dark flex  cursor-pointer items-center justify-center rounded-none text-white transition hover:opacity-90"
             onClick={onApply}
           >
             {t("apply")}
